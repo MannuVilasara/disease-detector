@@ -157,7 +157,7 @@ def main():
 
         if st.button("Submit"):
             data = requests.post(
-                f"{os.getenv("BACKEND_URI")}/predict",
+                f"{os.getenv('BACKEND_URI')}/predict",
                 json=selected_symptoms
             )
             print(data.json())
