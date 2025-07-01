@@ -6,7 +6,8 @@ import time
 
 # Load CSS from external file
 try:
-    with open('src/styles.css', 'r') as f:
+    css_file_path = os.path.join(os.path.dirname(__file__), 'styles.css')
+    with open(css_file_path, 'r') as f:
         styles = f.read()
 except FileNotFoundError:
     # Fallback if CSS file is not found
@@ -160,7 +161,7 @@ symptoms = [
     "Stomach Bleeding",
     "Distention Of Abdomen",
     "History Of Alcohol Consumption",
-    "Fluid Overload.1",
+    "Fluid Overload",
     "Blood In Sputum",
     "Prominent Veins On Calf",
     "Palpitations",
