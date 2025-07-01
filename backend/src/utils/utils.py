@@ -1,9 +1,17 @@
 import copy
 from src.utils.data import symptoms, display_named_symptoms, diseases
 from sklearn.preprocessing import LabelEncoder
+from google import genai
+from dotenv import load_dotenv
+import os   
+
+load_dotenv()
+API_KEY = os.getenv("GEMINI_API_KEY")
 
 le = LabelEncoder()
 le.fit_transform(diseases)
+
+client = genai.Client(api_key=API_KEY)
 
 def encode_symptoms(symptom_list):
     """
@@ -47,3 +55,28 @@ def inverse_encode_symptoms(encoded_symptoms):
         list: List of original symptom names.
     """
     return le.inverse_transform(encoded_symptoms)
+
+
+def get_disease_description(disease_name):
+    """
+    Fetches the description of a disease using Google Gemini API.
+    
+    Args:
+        disease_name (str): Name of the disease.
+
+    Returns:
+        str: Description of the disease.
+    """
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=[f"""
+                Give a brief and clear overview of the disease: {disease_name}.
+                Include the following sections in order:
+                1. **Description** – What the disease is.
+                2. **Symptoms** – Key signs to look out for.
+                3. **Causes** – Main reasons it occurs.
+                4. **Precautions** – How to prevent or reduce risk.
+                5. **Medication** – Common treatments or medicines.
+                """],
+    )
+    return response.candidates[0].content if response.candidates else "No description available."
