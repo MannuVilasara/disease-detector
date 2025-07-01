@@ -146,7 +146,7 @@ st.header("Disease Prediction App")
 
 def main():
     with st.container(border=True):
-        selected_symptoms = st.multiselect("Select Symptons", symptoms, default=None)
+        selected_symptoms = st.multiselect("Select Symptoms", symptoms, default=None)
 
         # def write_app():
         #     st.write(selected_symptoms)
