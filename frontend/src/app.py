@@ -161,7 +161,7 @@ symptoms = [
     "Stomach Bleeding",
     "Distention Of Abdomen",
     "History Of Alcohol Consumption",
-    "Fluid Overload.1",
+    "Fluid Overload",
     "Blood In Sputum",
     "Prominent Veins On Calf",
     "Palpitations",
