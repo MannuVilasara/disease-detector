@@ -79,4 +79,4 @@ def get_disease_description(disease_name):
                 5. **Medication** – Common treatments or medicines.
                 """],
     )
-    return response.candidates[0].content if response.candidates else "No description available."
+    return response.text if response.candidates else "No description available."

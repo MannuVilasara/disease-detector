@@ -2,8 +2,35 @@ import streamlit as st
 import os
 import requests
 import time
-from components.displayResult import display_result
+import asyncio
+import aiohttp
+from components.displayResult import display_result, display_disease_disc, disclaimer
 from utils.constants import BACKEND_URL
+
+
+async def fetch_disease_description(disease_name):
+    """Fetch disease description from the backend asynchronously"""
+    try:
+        async with aiohttp.ClientSession() as session:
+            async with session.post(
+                f"{BACKEND_URL}/disease_description",
+                json={"disease_name": disease_name},
+                timeout=aiohttp.ClientTimeout(total=20)  # Increased timeout for Gemini Flash
+            ) as response:
+                if response.status == 200:
+                    return await response.json()
+                else:
+                    st.error("❌ Error connecting to the description service. Please try again.")
+                    return None
+    except asyncio.TimeoutError:
+        st.error("⏱️ Request timed out. Please check your connection and try again.")
+        return None
+    except aiohttp.ClientConnectionError:
+        st.error("🔌 Could not connect to the description service. Please ensure the backend is running.")
+        return None
+    except Exception as e:
+        st.error(f"❌ An unexpected error occurred: {str(e)}")
+        return None
 
 
 def result(selected_symptoms):
@@ -39,6 +66,13 @@ def result(selected_symptoms):
                     if response.status_code == 200:
                         disease = response.json()['disease']
                         display_result(disease, selected_symptoms)
+
+                        # Fetch and display disease description asynchronously
+                        description_data = asyncio.run(fetch_disease_description(disease))
+                        if description_data:
+                            display_disease_disc(description_data)
+
+                        disclaimer()
                     else:
                         st.error("❌ Error connecting to the prediction service. Please try again.")
                         
