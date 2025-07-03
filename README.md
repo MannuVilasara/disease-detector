@@ -54,14 +54,14 @@ Comprehensive documentation is available in the [`docs/`](./docs/) directory:
 
 | Document                                                          | Description                     |
 | ----------------------------------------------------------------- | ------------------------------- |
-| **[📋 Documentation Index](./disease-detector/docs/README.md)**                    | Complete documentation overview |
-| **[🧠 ML Documentation](./disease-detector/docs/ml-documentation.md)**             | Machine learning model details  |
-| **[🔧 Backend Documentation](./disease-detector/docs/backend-documentation.md)**   | Flask API reference             |
-| **[🎨 Frontend Documentation](./disease-detector/docs/frontend-documentation.md)** | Streamlit interface guide       |
-| **[📡 API Documentation](./disease-detector/docs/api-documentation.md)**           | Complete API reference          |
-| **[🚀 Deployment Guide](./disease-detector/docs/deployment-guide.md)**             | Production deployment           |
-| **[🛠️ Development Guide](./disease-detector/docs/development-guide.md)**           | Developer setup and workflow    |
-| **[👤 User Guide](./disease-detector/docs/user-guide.md)**                         | End-user instructions           |
+| **[📋 Documentation Index](./docs/README.md)**                    | Complete documentation overview |
+| **[🧠 ML Documentation](./docs/ml-documentation.md)**             | Machine learning model details  |
+| **[🔧 Backend Documentation](./docs/backend-documentation.md)**   | Flask API reference             |
+| **[🎨 Frontend Documentation](./docs/frontend-documentation.md)** | Streamlit interface guide       |
+| **[📡 API Documentation](./docs/api-documentation.md)**           | Complete API reference          |
+| **[🚀 Deployment Guide](./docs/deployment-guide.md)**             | Production deployment           |
+| **[🛠️ Development Guide](./docs/development-guide.md)**           | Developer setup and workflow    |
+| **[👤 User Guide](./docs/user-guide.md)**                         | End-user instructions           |
 
 ## 🎯 Features
 
@@ -133,7 +133,7 @@ The system can predict 41 different medical conditions including:
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Development Guide](./disease-detector/docs/development-guide.md) for:
+We welcome contributions! Please see our [Development Guide](./docs/development-guide.md) for:
 
 - Setting up the development environment
 - Understanding the codebase
@@ -142,9 +142,9 @@ We welcome contributions! Please see our [Development Guide](./disease-detector/
 
 ## 📞 Support
 
-- **Documentation**: Check the [docs/](./disease-detector/docs/) directory
+- **Documentation**: Check the [docs/](./docs/) directory
 - **Issues**: Create a GitHub issue for bugs or feature requests
-- **Questions**: Refer to the [User Guide](./disease-detector/docs/user-guide.md)
+- **Questions**: Refer to the [User Guide](./docs/user-guide.md)
 
 ## 📈 Performance
 
