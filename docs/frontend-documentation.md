@@ -363,7 +363,7 @@ async with session.post(
 - Responsive column sizing
 - Maintained spacing and proportions
 
-**Mobile** (<768px):
+**Mobile** (\<768px):
 
 - Single column layout
 - Touch-friendly button sizes
@@ -458,18 +458,18 @@ secondaryBackgroundColor = "#1e293b"
 
 **Load Times**:
 
-- Initial page load: <2 seconds
-- Prediction response: <5 seconds
-- Description fetch: <10 seconds
+- Initial page load: \<2 seconds
+- Prediction response: \<5 seconds
+- Description fetch: \<10 seconds
 
 ## 🚀 Deployment
 
 ### Streamlit Cloud
 
 1. **Connect Repository**: Link GitHub repository
-2. **Configure Settings**: Set Python version and requirements
-3. **Environment Variables**: Add backend URL
-4. **Deploy**: Automatic deployment on push
+1. **Configure Settings**: Set Python version and requirements
+1. **Environment Variables**: Add backend URL
+1. **Deploy**: Automatic deployment on push
 
 ### Docker Deployment
 
@@ -501,14 +501,14 @@ streamlit run src/app.py --server.port 8501 --server.address 0.0.0.0
 ### Streamlit Optimizations
 
 1. **Caching**: Use `@st.cache_data` for data loading
-2. **Session State**: Minimize state changes
-3. **Component Reuse**: Avoid unnecessary re-renders
+1. **Session State**: Minimize state changes
+1. **Component Reuse**: Avoid unnecessary re-renders
 
 ### Network Optimizations
 
 1. **Async Requests**: Non-blocking disease descriptions
-2. **Timeout Management**: Appropriate timeout values
-3. **Error Recovery**: Graceful fallbacks
+1. **Timeout Management**: Appropriate timeout values
+1. **Error Recovery**: Graceful fallbacks
 
 ## 🔒 Security Considerations
 
@@ -526,9 +526,9 @@ streamlit run src/app.py --server.port 8501 --server.address 0.0.0.0
 ## 📝 Best Practices
 
 1. **Component Separation**: Keep components focused and reusable
-2. **Error Handling**: Provide clear, actionable error messages
-3. **User Feedback**: Show loading states and progress
-4. **Responsive Design**: Test on multiple screen sizes
-5. **Performance**: Minimize unnecessary API calls
-6. **Accessibility**: Use semantic HTML and clear contrast
-7. **Documentation**: Keep component documentation updated
+1. **Error Handling**: Provide clear, actionable error messages
+1. **User Feedback**: Show loading states and progress
+1. **Responsive Design**: Test on multiple screen sizes
+1. **Performance**: Minimize unnecessary API calls
+1. **Accessibility**: Use semantic HTML and clear contrast
+1. **Documentation**: Keep component documentation updated

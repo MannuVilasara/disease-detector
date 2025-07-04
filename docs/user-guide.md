@@ -35,20 +35,20 @@ The application is available as a web interface that you can access through your
 When you first open the application, you'll see:
 
 1. **Header Section**: App title and description
-2. **Information Panel**: Explanation of how the AI works
-3. **Symptom Selection Area**: Where you choose your symptoms
-4. **Prediction Button**: To analyze your selected symptoms
-5. **Results Area**: Where predictions and descriptions appear
+1. **Information Panel**: Explanation of how the AI works
+1. **Symptom Selection Area**: Where you choose your symptoms
+1. **Prediction Button**: To analyze your selected symptoms
+1. **Results Area**: Where predictions and descriptions appear
 
 ### Step 2: Selecting Symptoms
 
 **Symptom Selection Process**:
 
 1. **Find the Symptom Dropdown**: Located in the main content area
-2. **Click to Open**: Click on the dropdown to see available symptoms
-3. **Search for Symptoms**: Type to filter through 130+ available symptoms
-4. **Select Multiple Symptoms**: Choose all symptoms that apply to you
-5. **Review Selection**: The system shows how many symptoms you've selected
+1. **Click to Open**: Click on the dropdown to see available symptoms
+1. **Search for Symptoms**: Type to filter through 130+ available symptoms
+1. **Select Multiple Symptoms**: Choose all symptoms that apply to you
+1. **Review Selection**: The system shows how many symptoms you've selected
 
 **Tips for Better Results**:
 
@@ -62,9 +62,9 @@ When you first open the application, you'll see:
 **Making a Prediction**:
 
 1. **Check Selection**: Ensure you've selected at least one symptom
-2. **Click "Analyze Symptoms"**: The button becomes active when symptoms are selected
-3. **Wait for Analysis**: The system processes your symptoms (usually takes 2-5 seconds)
-4. **View Results**: Your predicted disease appears with styling
+1. **Click "Analyze Symptoms"**: The button becomes active when symptoms are selected
+1. **Wait for Analysis**: The system processes your symptoms (usually takes 2-5 seconds)
+1. **View Results**: Your predicted disease appears with styling
 
 **Understanding the Process**:
 
@@ -77,10 +77,10 @@ When you first open the application, you'll see:
 **Disease Description Sections**:
 
 1. **Description**: What the disease is and its basic characteristics
-2. **Symptoms**: Key signs and symptoms to look for
-3. **Causes**: Main reasons the disease occurs
-4. **Precautions**: How to prevent or reduce risk
-5. **Medication**: Common treatments and medicines
+1. **Symptoms**: Key signs and symptoms to look for
+1. **Causes**: Main reasons the disease occurs
+1. **Precautions**: How to prevent or reduce risk
+1. **Medication**: Common treatments and medicines
 
 **Information Source**:
 
@@ -310,10 +310,10 @@ A: No, never use this system for medical emergencies. Contact emergency services
 **If You Experience Issues**:
 
 1. Refresh the browser page
-2. Try a different browser
-3. Check your internet connection
-4. Clear browser cache
-5. Contact support if problems persist
+1. Try a different browser
+1. Check your internet connection
+1. Clear browser cache
+1. Contact support if problems persist
 
 ## 📞 Support and Feedback
 

@@ -142,10 +142,10 @@ frontend/
 ### Data Flow
 
 1. **Training Data** → `MultiDiseaseDataset.csv`
-2. **Data Processing** → Extract symptoms and diseases
-3. **Model Training** → Random Forest Classifier
-4. **Model Serialization** → `model.joblib`
-5. **Prediction** → Load model in Flask app
+1. **Data Processing** → Extract symptoms and diseases
+1. **Model Training** → Random Forest Classifier
+1. **Model Serialization** → `model.joblib`
+1. **Prediction** → Load model in Flask app
 
 ### Key ML Files
 
@@ -320,17 +320,17 @@ def test_symptom_selection():
 ### Complete Request Flow
 
 1. **User Interaction**: Selects symptoms in frontend
-2. **Frontend Processing**: Validates selection, enables button
-3. **API Request**: POST to `/predict` with symptom list
-4. **Backend Processing**:
+1. **Frontend Processing**: Validates selection, enables button
+1. **API Request**: POST to `/predict` with symptom list
+1. **Backend Processing**:
    - Maps display names to internal names
    - Encodes symptoms to binary vector
    - Makes ML prediction
    - Decodes result to disease name
-5. **Response**: Returns predicted disease
-6. **Description Fetch**: Async request to `/disease_description`
-7. **AI Processing**: Gemini generates description
-8. **Display**: Shows results to user
+1. **Response**: Returns predicted disease
+1. **Description Fetch**: Async request to `/disease_description`
+1. **AI Processing**: Gemini generates description
+1. **Display**: Shows results to user
 
 ### Data Transformations
 
@@ -362,19 +362,19 @@ disease = "Fungal infection"                  # via inverse_encode_symptoms()
 ### Adding New Symptoms
 
 1. **Update ML Data**: Add symptom column to `MultiDiseaseDataset.csv`
-2. **Retrain Model**: Run `fithub.ipynb` to retrain
-3. **Update Backend Data**: Add to `symptoms` dict in `data.py`
-4. **Update Frontend Data**: Add to `symptoms` list in `data.py`
-5. **Update Mappings**: Add display name mapping
-6. **Test**: Verify end-to-end functionality
+1. **Retrain Model**: Run `fithub.ipynb` to retrain
+1. **Update Backend Data**: Add to `symptoms` dict in `data.py`
+1. **Update Frontend Data**: Add to `symptoms` list in `data.py`
+1. **Update Mappings**: Add display name mapping
+1. **Test**: Verify end-to-end functionality
 
 ### Adding New Diseases
 
 1. **Update Training Data**: Add disease cases to dataset
-2. **Retrain Model**: Update model with new disease classes
-3. **Update Backend**: Ensure disease list includes new diseases
-4. **Test Predictions**: Verify new diseases can be predicted
-5. **Update Documentation**: Add to disease list documentation
+1. **Retrain Model**: Update model with new disease classes
+1. **Update Backend**: Ensure disease list includes new diseases
+1. **Test Predictions**: Verify new diseases can be predicted
+1. **Update Documentation**: Add to disease list documentation
 
 ### Adding API Endpoints
 
@@ -492,9 +492,9 @@ git checkout -b feature/new-feature-name
 
 2. **Make Changes**: Implement your feature
 
-3. **Test Changes**: Run tests and manual verification
+1. **Test Changes**: Run tests and manual verification
 
-4. **Commit Changes**:
+1. **Commit Changes**:
 
 ```bash
 git add .
@@ -574,8 +574,8 @@ LOG_LEVEL=WARNING
 ### Understanding the Codebase
 
 1. **Start with**: `ml/fithub.ipynb` to understand the ML model
-2. **Then**: `backend/src/app.py` for API structure
-3. **Finally**: `frontend/src/app.py` for UI flow
+1. **Then**: `backend/src/app.py` for API structure
+1. **Finally**: `frontend/src/app.py` for UI flow
 
 ### External Documentation
 

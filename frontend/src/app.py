@@ -15,12 +15,14 @@ st.set_page_config(
 
 
 # Custom CSS for modern dark theme
-st.markdown(f"""
+st.markdown(
+    f"""
 <style>
     {styles}
 </style>
-""", unsafe_allow_html=True)
-
+""",
+    unsafe_allow_html=True,
+)
 
 
 def main():
@@ -29,17 +31,16 @@ def main():
     header()
 
     col1, col2, col3 = st.columns([1, 3, 1])
-    
+
     with col2:
         # Information section
         info()
 
-        #selection section
+        # selection section
         selected_symptoms = selection()
-        
-        #result section
-        result(selected_symptoms)
 
+        # result section
+        result(selected_symptoms)
 
     # Footer
     footer()

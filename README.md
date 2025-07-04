@@ -52,16 +52,16 @@ disease-detector/
 
 Comprehensive documentation is available in the [`docs/`](./docs/) directory:
 
-| Document                                                          | Description                     |
+| Document | Description |
 | ----------------------------------------------------------------- | ------------------------------- |
-| **[📋 Documentation Index](./docs/README.md)**                    | Complete documentation overview |
-| **[🧠 ML Documentation](./docs/ml-documentation.md)**             | Machine learning model details  |
-| **[🔧 Backend Documentation](./docs/backend-documentation.md)**   | Flask API reference             |
-| **[🎨 Frontend Documentation](./docs/frontend-documentation.md)** | Streamlit interface guide       |
-| **[📡 API Documentation](./docs/api-documentation.md)**           | Complete API reference          |
-| **[🚀 Deployment Guide](./docs/deployment-guide.md)**             | Production deployment           |
-| **[🛠️ Development Guide](./docs/development-guide.md)**           | Developer setup and workflow    |
-| **[👤 User Guide](./docs/user-guide.md)**                         | End-user instructions           |
+| **[📋 Documentation Index](./docs/README.md)** | Complete documentation overview |
+| **[🧠 ML Documentation](./docs/ml-documentation.md)** | Machine learning model details |
+| **[🔧 Backend Documentation](./docs/backend-documentation.md)** | Flask API reference |
+| **[🎨 Frontend Documentation](./docs/frontend-documentation.md)** | Streamlit interface guide |
+| **[📡 API Documentation](./docs/api-documentation.md)** | Complete API reference |
+| **[🚀 Deployment Guide](./docs/deployment-guide.md)** | Production deployment |
+| **[🛠️ Development Guide](./docs/development-guide.md)** | Developer setup and workflow |
+| **[👤 User Guide](./docs/user-guide.md)** | End-user instructions |
 
 ## 🎯 Features
 
@@ -122,9 +122,9 @@ print(f"Predicted disease: {disease}")
 
 The system can predict 41 different medical conditions including:
 
-**Common Conditions**: Cold, Flu, Pneumonia, Diabetes, Hypertension  
-**Infectious Diseases**: Malaria, Dengue, Typhoid, Hepatitis variants  
-**Chronic Conditions**: Arthritis, GERD, Peptic Ulcer Disease  
+**Common Conditions**: Cold, Flu, Pneumonia, Diabetes, Hypertension\
+**Infectious Diseases**: Malaria, Dengue, Typhoid, Hepatitis variants\
+**Chronic Conditions**: Arthritis, GERD, Peptic Ulcer Disease\
 **Other Conditions**: Migraine, Jaundice, Heart Attack, and more
 
 ## 🛡️ Medical Disclaimer
@@ -149,7 +149,7 @@ We welcome contributions! Please see our [Development Guide](./docs/development-
 ## 📈 Performance
 
 - **Model Accuracy**: ~95% on test dataset
-- **API Response Time**: <500ms for predictions
+- **API Response Time**: \<500ms for predictions
 - **Symptoms Supported**: 132 different symptoms
 - **Disease Categories**: 41 medical conditions
 - **Concurrent Users**: Supports multiple simultaneous users
@@ -161,6 +161,6 @@ We welcome contributions! Please see our [Development Guide](./docs/development-
 - No medical record storage
 - Anonymous usage tracking
 
----
+______________________________________________________________________
 
 **Built with ❤️ for better healthcare accessibility through AI**

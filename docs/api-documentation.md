@@ -39,7 +39,7 @@ Currently, the API does not require authentication. For production deployments, 
 curl -X GET http://localhost:8000/
 ```
 
----
+______________________________________________________________________
 
 ### 2. Advanced Health Check
 
@@ -69,7 +69,7 @@ curl -X GET http://localhost:8000/
 curl -X GET http://localhost:8000/health
 ```
 
----
+______________________________________________________________________
 
 ### 3. Disease Prediction
 
@@ -141,7 +141,7 @@ curl -X POST http://localhost:8000/predict \
 
 **Valid Symptoms**: See [Symptom Reference](#symptom-reference)
 
----
+______________________________________________________________________
 
 ### 4. Disease Description
 
@@ -534,7 +534,7 @@ curl -X POST http://localhost:8000/disease_description \
 
 **Typical Response Times**:
 
-- Health check: <100ms
+- Health check: \<100ms
 - Disease prediction: 200-500ms
 - Disease description: 2-10 seconds (depends on Gemini AI)
 
@@ -592,11 +592,11 @@ def predict_disease(symptoms):
 **Recommendations**:
 
 1. **HTTPS**: Use TLS/SSL encryption
-2. **CORS**: Restrict origins to your frontend domains
-3. **Rate Limiting**: Prevent abuse
-4. **Input Validation**: Validate all inputs
-5. **API Keys**: Add authentication for production
-6. **Logging**: Monitor and log requests
+1. **CORS**: Restrict origins to your frontend domains
+1. **Rate Limiting**: Prevent abuse
+1. **Input Validation**: Validate all inputs
+1. **API Keys**: Add authentication for production
+1. **Logging**: Monitor and log requests
 
 ### Input Validation
 
@@ -614,18 +614,18 @@ The API validates:
 When integrating with a frontend:
 
 1. Use proper error handling for network issues
-2. Implement loading states for user feedback
-3. Handle timeout scenarios gracefully
-4. Cache disease descriptions when possible
+1. Implement loading states for user feedback
+1. Handle timeout scenarios gracefully
+1. Cache disease descriptions when possible
 
 ### Backend Integration
 
 For server-to-server communication:
 
 1. Implement retry logic with exponential backoff
-2. Use connection pooling for better performance
-3. Monitor response times and error rates
-4. Consider using a reverse proxy for load balancing
+1. Use connection pooling for better performance
+1. Monitor response times and error rates
+1. Consider using a reverse proxy for load balancing
 
 ## 📈 Monitoring and Analytics
 

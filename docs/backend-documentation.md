@@ -402,18 +402,19 @@ services:
    - Set `FLASK_ENV=production`
    - Configure `GEMINI_API_KEY`
 
-2. **CORS Configuration**:
+1. **CORS Configuration**:
 
    - Update origins to specific frontend URLs
    - Remove wildcard (`*`) origins
 
-3. **Gunicorn Settings**:
+1. **Gunicorn Settings**:
 
    - Adjust worker count based on CPU cores
    - Configure appropriate timeouts
    - Set up proper logging
 
-4. **Security**:
+1. **Security**:
+
    - Use HTTPS in production
    - Implement rate limiting
    - Add authentication if required
@@ -490,10 +491,10 @@ Future versions should implement API versioning:
 ## 📝 Best Practices
 
 1. **Always validate input data**
-2. **Use proper HTTP status codes**
-3. **Implement comprehensive logging**
-4. **Handle model failures gracefully**
-5. **Monitor API performance**
-6. **Keep dependencies updated**
-7. **Use environment variables for configuration**
-8. **Implement proper error messages**
+1. **Use proper HTTP status codes**
+1. **Implement comprehensive logging**
+1. **Handle model failures gracefully**
+1. **Monitor API performance**
+1. **Keep dependencies updated**
+1. **Use environment variables for configuration**
+1. **Implement proper error messages**

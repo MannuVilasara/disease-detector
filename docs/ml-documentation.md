@@ -87,21 +87,21 @@ train_test_split(
    df = pd.read_csv("MultiDiseaseDataset.csv")
    ```
 
-2. **Feature-Target Separation**
+1. **Feature-Target Separation**
 
    ```python
    X = df.drop("prognosis", axis=1)  # Features (symptoms)
    y = df["prognosis"]               # Target (diseases)
    ```
 
-3. **Label Encoding**
+1. **Label Encoding**
 
    ```python
    le = LabelEncoder()
    y_encoded = le.fit_transform(y)
    ```
 
-4. **Train-Test Split**
+1. **Train-Test Split**
 
    ```python
    X_train, X_test, y_train, y_test = train_test_split(
@@ -109,14 +109,15 @@ train_test_split(
    )
    ```
 
-5. **Model Training**
+1. **Model Training**
 
    ```python
    model = RandomForestClassifier(n_estimators=100, max_depth=10)
    model.fit(X_train, y_train)
    ```
 
-6. **Model Evaluation**
+1. **Model Evaluation**
+
    ```python
    y_pred = model.predict(X_test)
    accuracy = accuracy_score(y_test, y_pred)
@@ -165,14 +166,14 @@ The trained model is saved as `model.joblib` and used by the backend API for rea
 The 132 symptoms are organized into categories:
 
 1. **General Symptoms**: fever, fatigue, weakness, weight loss
-2. **Respiratory**: cough, breathlessness, chest pain, throat irritation
-3. **Gastrointestinal**: stomach pain, nausea, vomiting, diarrhea
-4. **Neurological**: headache, dizziness, loss of balance
-5. **Skin**: itching, rash, skin peeling, yellowish skin
-6. **Musculoskeletal**: joint pain, muscle weakness, back pain
-7. **Cardiovascular**: chest pain, palpitations, fast heart rate
-8. **Urological**: burning micturition, blood in urine
-9. **Psychological**: anxiety, depression, mood swings
+1. **Respiratory**: cough, breathlessness, chest pain, throat irritation
+1. **Gastrointestinal**: stomach pain, nausea, vomiting, diarrhea
+1. **Neurological**: headache, dizziness, loss of balance
+1. **Skin**: itching, rash, skin peeling, yellowish skin
+1. **Musculoskeletal**: joint pain, muscle weakness, back pain
+1. **Cardiovascular**: chest pain, palpitations, fast heart rate
+1. **Urological**: burning micturition, blood in urine
+1. **Psychological**: anxiety, depression, mood swings
 
 ### Disease Categories
 
@@ -189,9 +190,9 @@ The model predicts 41 different diseases across various medical domains:
 ### Input Processing
 
 1. **Symptom Selection**: User selects symptoms from frontend
-2. **Encoding**: Symptoms converted to binary vector
-3. **Prediction**: Model predicts disease probability
-4. **Decoding**: Encoded prediction converted back to disease name
+1. **Encoding**: Symptoms converted to binary vector
+1. **Prediction**: Model predicts disease probability
+1. **Decoding**: Encoded prediction converted back to disease name
 
 ### Example Prediction Flow
 
@@ -255,28 +256,28 @@ The model uses a simple train-test split for validation:
 ### Future Improvements
 
 1. **K-Fold Cross-Validation**: More robust performance estimation
-2. **Hyperparameter Tuning**: Grid search for optimal parameters
-3. **Feature Selection**: Remove redundant or low-importance features
-4. **Ensemble Methods**: Combine multiple algorithms
-5. **Data Augmentation**: Increase dataset size with synthetic samples
+1. **Hyperparameter Tuning**: Grid search for optimal parameters
+1. **Feature Selection**: Remove redundant or low-importance features
+1. **Ensemble Methods**: Combine multiple algorithms
+1. **Data Augmentation**: Increase dataset size with synthetic samples
 
 ## 🎯 Usage in Production
 
 The trained model is integrated into the Flask backend API:
 
 1. **Model Loading**: Loaded once when the server starts
-2. **Symptom Encoding**: Convert user input to feature vector
-3. **Prediction**: Get disease prediction from model
-4. **Result Processing**: Convert prediction back to human-readable format
+1. **Symptom Encoding**: Convert user input to feature vector
+1. **Prediction**: Get disease prediction from model
+1. **Result Processing**: Convert prediction back to human-readable format
 
 ## 📋 Model Maintenance
 
 ### Regular Updates
 
 1. **Retrain with New Data**: Periodically retrain with updated medical data
-2. **Performance Monitoring**: Track prediction accuracy over time
-3. **Feature Updates**: Add new symptoms or diseases as needed
-4. **Validation**: Continuously validate against medical expertise
+1. **Performance Monitoring**: Track prediction accuracy over time
+1. **Feature Updates**: Add new symptoms or diseases as needed
+1. **Validation**: Continuously validate against medical expertise
 
 ### Version Control
 

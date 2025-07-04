@@ -24,9 +24,9 @@ disease-detector/
 ## 🚀 Quick Start
 
 1. **Set up the ML Model**: Train and save the model using the Jupyter notebook in `ml/`
-2. **Configure Backend**: Set up Flask API with required dependencies
-3. **Launch Frontend**: Start the Streamlit interface
-4. **Access Application**: Navigate to the web interface and start predicting diseases
+1. **Configure Backend**: Set up Flask API with required dependencies
+1. **Launch Frontend**: Start the Streamlit interface
+1. **Access Application**: Navigate to the web interface and start predicting diseases
 
 ## 📚 Documentation Structure
 
@@ -58,9 +58,9 @@ disease-detector/
 ## 🎯 Use Cases
 
 1. **Personal Health Assessment**: Users can check potential diseases based on symptoms
-2. **Educational Tool**: Learn about disease symptoms and relationships
-3. **Healthcare Support**: Assist healthcare professionals with preliminary assessments
-4. **Research**: Analyze symptom-disease correlations
+1. **Educational Tool**: Learn about disease symptoms and relationships
+1. **Healthcare Support**: Assist healthcare professionals with preliminary assessments
+1. **Research**: Analyze symptom-disease correlations
 
 ## 🔒 Disclaimer
 
@@ -95,10 +95,10 @@ Choose your path based on your role:
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+1. Create a feature branch
+1. Make your changes
+1. Add tests if applicable
+1. Submit a pull request
 
 ## 📞 Support
 

@@ -130,7 +130,7 @@ display_named_symptoms = {
     "Inflammatory Nails": "inflammatory_nails",
     "Blister": "blister",
     "Red Sore Around Nose": "red_sore_around_nose",
-    "Yellow Crust Ooze": "yellow_crust_ooze"
+    "Yellow Crust Ooze": "yellow_crust_ooze",
 }
 
 symptoms = {
@@ -265,7 +265,49 @@ symptoms = {
     "inflammatory_nails": 0,
     "blister": 0,
     "red_sore_around_nose": 0,
-    "yellow_crust_ooze": 0
+    "yellow_crust_ooze": 0,
 }
 
-diseases = ["Fungal infection", "Allergy", "GERD", "Chronic cholestasis", "Drug Reaction", "Peptic ulcer diseae", "AIDS", "Diabetes ", "Gastroenteritis", "Bronchial Asthma", "Hypertension ", "Migraine", "Cervical spondylosis", "Paralysis (brain hemorrhage)", "Jaundice", "Malaria", "Chicken pox", "Dengue", "Typhoid", "hepatitis A", "Hepatitis B", "Hepatitis C", "Hepatitis D", "Hepatitis E", "Alcoholic hepatitis", "Tuberculosis", "Common Cold", "Pneumonia", "Dimorphic hemmorhoids(piles)", "Heart attack", "Varicose veins", "Hypothyroidism", "Hyperthyroidism", "Hypoglycemia", "Osteoarthristis", "Arthritis", "(vertigo) Paroymsal  Positional Vertigo", "Acne", "Urinary tract infection", "Psoriasis", "Impetigo"]
+diseases = [
+    "Fungal infection",
+    "Allergy",
+    "GERD",
+    "Chronic cholestasis",
+    "Drug Reaction",
+    "Peptic ulcer diseae",
+    "AIDS",
+    "Diabetes ",
+    "Gastroenteritis",
+    "Bronchial Asthma",
+    "Hypertension ",
+    "Migraine",
+    "Cervical spondylosis",
+    "Paralysis (brain hemorrhage)",
+    "Jaundice",
+    "Malaria",
+    "Chicken pox",
+    "Dengue",
+    "Typhoid",
+    "hepatitis A",
+    "Hepatitis B",
+    "Hepatitis C",
+    "Hepatitis D",
+    "Hepatitis E",
+    "Alcoholic hepatitis",
+    "Tuberculosis",
+    "Common Cold",
+    "Pneumonia",
+    "Dimorphic hemmorhoids(piles)",
+    "Heart attack",
+    "Varicose veins",
+    "Hypothyroidism",
+    "Hyperthyroidism",
+    "Hypoglycemia",
+    "Osteoarthristis",
+    "Arthritis",
+    "(vertigo) Paroymsal  Positional Vertigo",
+    "Acne",
+    "Urinary tract infection",
+    "Psoriasis",
+    "Impetigo",
+]

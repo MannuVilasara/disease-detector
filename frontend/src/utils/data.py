@@ -130,5 +130,5 @@ symptoms = [
     "Inflammatory Nails",
     "Blister",
     "Red Sore Around Nose",
-    "Yellow Crust Ooze"
+    "Yellow Crust Ooze",
 ]
