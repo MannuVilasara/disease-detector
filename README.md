@@ -4,6 +4,8 @@
 
 An intelligent medical assistance system that uses machine learning to predict diseases based on user-selected symptoms, powered by Random Forest classification and Google Gemini AI for detailed disease descriptions.
 
+> Docs are live at https://mannu.me/disease-detector
+
 ## 🚀 Quick Start
 
 ### For Users
