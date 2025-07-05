@@ -20,7 +20,7 @@ def about():
             <p style="margin: 0.5rem 0 0 0; color: #94a3b8;"><strong>UID:</strong> 2472054</p>
         </div>
         <div style="background: rgba(6, 182, 212, 0.1); padding: 1.5rem; border-radius: 12px; margin: 1rem 0; border-left: 4px solid #06b6d4;">
-            <h5 style="color: #06b6d4; margin: 0 0 0.5rem 0;">🧑‍💻 Keshav Gilhotra 3</h5>
+            <h5 style="color: #06b6d4; margin: 0 0 0.5rem 0;">🧑‍💻 Keshav Gilhotra</h5>
             <p style="margin: 0; color: #cbd5e1;"><strong>Department:</strong> CSE</p>
             <p style="margin: 0.5rem 0 0 0; color: #94a3b8;"><strong>UID:</strong> 2472125</p>
         </div>
