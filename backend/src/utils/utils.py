@@ -4,9 +4,11 @@ from sklearn.preprocessing import LabelEncoder
 from google import genai
 from dotenv import load_dotenv
 import os
+import json
 
 load_dotenv()
 API_KEY = os.getenv("GEMINI_API_KEY")
+PASSWORD = os.getenv("PASSWORD")
 
 le = LabelEncoder()
 le.fit_transform(diseases)
@@ -69,6 +71,14 @@ def get_disease_description(disease_name):
     Returns:
         str: Description of the disease.
     """
+    if disease_name not in diseases:
+        return "Disease not found."
+    
+    with open("cache/disease_descriptions.json", "r") as file:
+        disease_descriptions = json.load(file)
+    if disease_name in disease_descriptions:
+        return disease_descriptions[disease_name]
+    
     response = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=[
@@ -83,4 +93,19 @@ def get_disease_description(disease_name):
                 """
         ],
     )
+    if response.candidates:
+        disease_descriptions = json.load(open("cache/disease_descriptions.json", "r"))
+        disease_descriptions[disease_name] = response.text
+        with open("cache/disease_descriptions.json", "w") as file:
+            json.dump(disease_descriptions, file)
     return response.text if response.candidates else "No description available."
+
+def clear_cache(password):
+    """
+    Clears the disease descriptions cache.
+    """
+    if password != PASSWORD:
+        return False
+    with open("cache/disease_descriptions.json", "w") as file:
+        json.dump({}, file)
+    return True

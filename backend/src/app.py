@@ -5,9 +5,9 @@ from src.utils.utils import (
     get_symptoms,
     inverse_encode_symptoms,
     get_disease_description,
+    clear_cache,
 )
 from joblib import load
-import os
 import logging
 import time
 
@@ -69,6 +69,21 @@ def disease_description_route():
         logger.error(f"Description lookup error: {e}")
         return jsonify(error="Description lookup failed"), 500
 
+
+@app.route("/clear_cache", methods=["POST"])
+def clear_cache_route():
+    """Endpoint to clear the disease descriptions cache"""
+    password = request.json.get("password")
+    if not password:
+        return jsonify(error="Password is required"), 400
+    try:
+        if clear_cache(password=password):
+            return jsonify(message="Cache cleared successfully"), 200
+        else:
+            return jsonify(error="Failed to clear cache. Enter correct password"), 500
+    except Exception as e:
+        logger.error(f"Cache clearing error: {e}")
+        return jsonify(error="Cache clearing failed"), 500
 
 @app.route("/health", methods=["GET"])
 def health_check():
