@@ -121,12 +121,15 @@ def main():
             # result section
             result(selected_symptoms)
         elif selected == "Sources":
-            st.markdown("### 🔗 GitHub Repository")
+            st.markdown("### 🔗 Sources")
             st.markdown(
                 """
                 <div class="info-box">
                     <p><a href="https://github.com/MannuVilasara/disease-detector" target="_blank" style="color: #64b5f6; text-decoration: none; font-weight: bold;">
                         🚀 Visit GitHub Repository →
+                    </a></p>
+                    <p><a href="https://github.com/MannuVilasara/disease-detector" target="_blank" style="color: #64b5f6; text-decoration: none; font-weight: bold;">
+                        📘 Visit Docs →
                     </a></p>
                 </div>
                 """,
