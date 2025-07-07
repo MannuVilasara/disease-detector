@@ -2,10 +2,13 @@ name: Lint
 
 on: [push, pull_request]
 
+permissions:
+  contents: write
+
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: tdeboissiere/python-format-action@master
+      - uses: psf/black@stable
       - uses: stefanzweifel/git-auto-commit-action@v6
