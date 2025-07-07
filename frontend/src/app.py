@@ -66,7 +66,7 @@ def main():
     # Navigation Menu
     selected = option_menu(
         None, 
-        ["Home", "About", "Sources"], 
+        ["Home", "Team", "Sources"], 
         icons=['house', 'info-circle', 'github'], 
         menu_icon=None, 
         default_index=0, 
@@ -136,7 +136,7 @@ def main():
                 unsafe_allow_html=True
             )
             
-        elif selected == "About":
+        elif selected == "Team":
             # About section
             about()
 
