@@ -73,12 +73,12 @@ def get_disease_description(disease_name):
     """
     if disease_name not in diseases:
         return "Disease not found."
-    
+
     with open("cache/disease_descriptions.json", "r") as file:
         disease_descriptions = json.load(file)
     if disease_name in disease_descriptions:
         return disease_descriptions[disease_name]
-    
+
     response = client.models.generate_content(
         model="gemini-2.5-flash",
         contents=[
@@ -99,6 +99,7 @@ def get_disease_description(disease_name):
         with open("cache/disease_descriptions.json", "w") as file:
             json.dump(disease_descriptions, file)
     return response.text if response.candidates else "No description available."
+
 
 def clear_cache(password):
     """

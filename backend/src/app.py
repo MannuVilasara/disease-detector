@@ -85,6 +85,7 @@ def clear_cache_route():
         logger.error(f"Cache clearing error: {e}")
         return jsonify(error="Cache clearing failed"), 500
 
+
 @app.route("/health", methods=["GET"])
 def health_check():
     """Health check endpoint for monitoring"""
