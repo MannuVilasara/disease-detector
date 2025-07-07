@@ -65,49 +65,45 @@ def main():
 
     # Navigation Menu
     selected = option_menu(
-        None, 
-        ["Home", "Team", "Sources"], 
-        icons=['house', 'info-circle', 'github'], 
-        menu_icon=None, 
-        default_index=0, 
+        None,
+        ["Home", "Team", "Sources"],
+        icons=["house", "info-circle", "github"],
+        menu_icon=None,
+        default_index=0,
         orientation="horizontal",
         styles={
             "container": {
-                "padding": "0px", 
+                "padding": "0px",
                 "background-color": "transparent",
                 "border": "0px solid transparent",
                 "box-shadow": "none",
                 "margin": "0px",
                 "border-radius": "0px",
                 "width": "100%",
-                "max-width": "none"
+                "max-width": "none",
             },
-            "icon": {
-                "color": "#64b5f6", 
-                "font-size": "20px"
-            }, 
+            "icon": {"color": "#64b5f6", "font-size": "20px"},
             "nav-link": {
-                "font-size": "16px", 
-                "text-align": "center", 
-                "margin": "5px 10px", 
+                "font-size": "16px",
+                "text-align": "center",
+                "margin": "5px 10px",
                 "padding": "12px 24px",
                 "--hover-color": "rgba(100, 181, 246, 0.1)",
                 "border-radius": "12px",
                 "color": "#ffffff",
                 "background-color": "transparent",
                 "border": "0px solid transparent",
-                "box-shadow": "none"
+                "box-shadow": "none",
             },
             "nav-link-selected": {
                 "background-color": "rgba(100, 181, 246, 0.2)",
                 "color": "#64b5f6",
                 "border": "0px solid transparent",
-                "box-shadow": "none"
+                "box-shadow": "none",
             },
-        }
+        },
     )
-    
-        
+
     col1, col2, col3 = st.columns([1, 3, 1])
 
     with col2:
@@ -133,9 +129,9 @@ def main():
                     </a></p>
                 </div>
                 """,
-                unsafe_allow_html=True
+                unsafe_allow_html=True,
             )
-            
+
         elif selected == "Team":
             # About section
             about()

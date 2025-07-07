@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 def about():
     html_content = """
 <div class="info-box">
@@ -83,5 +84,5 @@ def about():
     </p>
 </div>
 """
-    
+
     st.markdown(html_content, unsafe_allow_html=True)
