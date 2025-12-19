@@ -1,7 +1,8 @@
 # Gunicorn configuration file
 
 # Server socket
-bind = "127.0.0.1:8000"
+# Bind to 0.0.0.0 so the server is reachable from the host when running in Docker
+bind = "0.0.0.0:8000"
 backlog = 2048
 
 # Worker processes

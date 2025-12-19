@@ -1,0 +1,58 @@
+FROM python:3.12-slim AS builder
+
+WORKDIR /app
+
+# Install build-time packages
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    gcc \
+    ca-certificates \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy application source (including requirements.txt)
+COPY . .
+
+
+
+### Final stage: runtime image
+FROM python:3.12-slim
+
+# Minimal runtime deps (include build tools to install some Python packages)
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    gcc \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create a non-root user with a home directory
+RUN groupadd -r appuser && useradd -r -g appuser -m -d /home/appuser appuser
+
+# Configure environment
+ENV HOME=/home/appuser
+ENV XDG_CACHE_HOME=/home/appuser/.cache
+ENV PATH=/app/.venv/bin:$PATH
+
+# Ensure cache directories exist and are writable by appuser
+RUN mkdir -p /home/appuser/.cache \
+    && chown -R appuser:appuser /home/appuser \
+    && chmod -R 0777 /home/appuser/.cache
+
+WORKDIR /app
+
+# Copy the application from the builder
+COPY --from=builder /app /app
+
+# Ensure app directory owned by appuser
+RUN chown -R appuser:appuser /app
+
+# Install Python packages into the app user's local site-packages to avoid venv issues
+# Switch to appuser and install requirements with --user so executables land in /home/appuser/.local/bin
+USER appuser
+ENV PATH=/home/appuser/.local/bin:$PATH
+RUN python -m pip install --upgrade --user pip setuptools wheel \
+    && python -m pip install --user -r requirements.txt
+
+# Expose the Streamlit default port and run the app using the user-local streamlit binary
+EXPOSE 8501
+CMD ["/home/appuser/.local/bin/streamlit", "run", "src/app.py", "--server.port", "8501", "--server.address", "0.0.0.0", "--server.enableCORS", "false"]
