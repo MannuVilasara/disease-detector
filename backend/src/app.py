@@ -32,10 +32,12 @@ except Exception as e:
     logger.error(f"Failed to load model: {e}")
     model = None
 
+
 # Routes
 @api_bp.route("/")
 def index():
     return jsonify(message="Welcome to the Flask API!")
+
 
 @api_bp.route("/predict", methods=["POST"])
 def encode_symptoms_route():
@@ -54,6 +56,7 @@ def encode_symptoms_route():
         logger.error(f"Prediction error: {e}")
         return jsonify(error="Prediction failed"), 500
 
+
 @api_bp.route("/disease_description", methods=["POST"])
 def disease_description_route():
     data = request.get_json()
@@ -71,6 +74,7 @@ def disease_description_route():
         logger.error(f"Description lookup error: {e}")
         return jsonify(error="Description lookup failed"), 500
 
+
 @api_bp.route("/clear_cache", methods=["POST"])
 def clear_cache_route():
     password = request.json.get("password")
@@ -85,13 +89,17 @@ def clear_cache_route():
         logger.error(f"Cache clearing error: {e}")
         return jsonify(error="Cache clearing failed"), 500
 
+
 @api_bp.route("/health", methods=["GET"])
 def health_check():
-    return jsonify({
-        "status": "healthy",
-        "model_loaded": model is not None,
-        "timestamp": str(int(time.time())),
-    })
+    return jsonify(
+        {
+            "status": "healthy",
+            "model_loaded": model is not None,
+            "timestamp": str(int(time.time())),
+        }
+    )
+
 
 # Register blueprint
 app.register_blueprint(api_bp)
