@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Blueprint
 from flask_cors import CORS
 from src.utils.utils import (
     encode_symptoms,
@@ -15,12 +15,16 @@ import time
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Initialize Flask app
 app = Flask(__name__)
 
-# Configure CORS
-CORS(app, origins=["*"])  # Configure this properly for production
+# Configure CORS (allow all origins for now, change for production)
+CORS(app, origins=["*"])
 
-# Load model with error handling
+# Create Blueprint for API
+api_bp = Blueprint("api", __name__, url_prefix="/api")
+
+# Load ML model
 try:
     model = load("src/model/model.joblib")
     logger.info("Model loaded successfully")
@@ -28,13 +32,12 @@ except Exception as e:
     logger.error(f"Failed to load model: {e}")
     model = None
 
-
-@app.route("/")
+# Routes
+@api_bp.route("/")
 def index():
     return jsonify(message="Welcome to the Flask API!")
 
-
-@app.route("/predict", methods=["POST"])
+@api_bp.route("/predict", methods=["POST"])
 def encode_symptoms_route():
     if model is None:
         return jsonify(error="Model not available"), 503
@@ -51,8 +54,7 @@ def encode_symptoms_route():
         logger.error(f"Prediction error: {e}")
         return jsonify(error="Prediction failed"), 500
 
-
-@app.route("/disease_description", methods=["POST"])
+@api_bp.route("/disease_description", methods=["POST"])
 def disease_description_route():
     data = request.get_json()
     if not data or "disease_name" not in data:
@@ -69,10 +71,8 @@ def disease_description_route():
         logger.error(f"Description lookup error: {e}")
         return jsonify(error="Description lookup failed"), 500
 
-
-@app.route("/clear_cache", methods=["POST"])
+@api_bp.route("/clear_cache", methods=["POST"])
 def clear_cache_route():
-    """Endpoint to clear the disease descriptions cache"""
     password = request.json.get("password")
     if not password:
         return jsonify(error="Password is required"), 400
@@ -85,18 +85,18 @@ def clear_cache_route():
         logger.error(f"Cache clearing error: {e}")
         return jsonify(error="Cache clearing failed"), 500
 
-
-@app.route("/health", methods=["GET"])
+@api_bp.route("/health", methods=["GET"])
 def health_check():
-    """Health check endpoint for monitoring"""
-    return jsonify(
-        {
-            "status": "healthy",
-            "model_loaded": model is not None,
-            "timestamp": str(int(time.time())),
-        }
-    )
+    return jsonify({
+        "status": "healthy",
+        "model_loaded": model is not None,
+        "timestamp": str(int(time.time())),
+    })
 
+# Register blueprint
+app.register_blueprint(api_bp)
 
+# Main entry
 if __name__ == "__main__":
-    app.run(debug=True)
+    # For production, run via Gunicorn
+    app.run(host="0.0.0.0", port=8000, debug=True)

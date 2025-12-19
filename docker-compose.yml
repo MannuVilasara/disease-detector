@@ -25,7 +25,7 @@ services:
     ports:
       - "8501:8501"
     environment:
-      - BACKEND_URL=http://disease-detector-backend:8000
+      - BACKEND_URL=http://disease-detector-backend:8000/api
     depends_on:
       - backend
     restart: unless-stopped
